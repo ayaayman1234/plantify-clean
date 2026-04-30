@@ -1,0 +1,17 @@
+﻿venv/
+.vscode/
+.pytest_cache/
+dataset/
+__pycache__/
+.streamlit/
+.git/
+node_modules/
+frontend/node_modules/
+frontend/.next/
+backend/model/*.onnx
+backend/model/classes.json
+
+*.md
+# Android signing artifacts
+*.jks
+ANDROID_KEYSTORE_BASE64*.txt

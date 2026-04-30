@@ -1,0 +1,53 @@
+
+> plantify-frontend@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.15
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.7:3000
+   - Environments: .env.local
+   - Experiments (use with caution):
+     · optimizePackageImports
+
+ ✓ Starting...
+ ✓ Ready in 2.4s
+ ✓ Compiled /middleware in 283ms (117 modules)
+ ○ Compiling /experts ...
+ ✓ Compiled /experts in 2.3s (982 modules)
+ GET /admin 200 in 2987ms
+ GET /experts 200 in 2996ms
+ GET /community 200 in 3053ms
+ GET /community 200 in 186ms
+ GET /experts 200 in 41ms
+ ○ Compiling /social ...
+ ✓ Compiled /social in 3.5s (1013 modules)
+ GET /social 200 in 3999ms
+ ✓ Compiled in 638ms (409 modules)
+ GET /social 200 in 133ms
+ GET /social 200 in 41ms
+ ○ Compiling /chat ...
+ ✓ Compiled /chat in 987ms (1018 modules)
+ GET /chat 200 in 1312ms
+ GET /chat 200 in 39ms
+ GET /admin 200 in 51ms
+ ○ Compiling /dashboard ...
+ ✓ Compiled /dashboard in 2.4s (1825 modules)
+ GET /dashboard 200 in 2829ms
+ GET /admin 200 in 1836ms
+ GET /community 200 in 59ms
+ ○ Compiling /notifications ...
+ ✓ Compiled /notifications in 1191ms (1835 modules)
+ GET /notifications 200 in 1501ms
+ GET /notifications 200 in 40ms
+ ○ Compiling /profile ...
+ ✓ Compiled /profile in 1319ms (1847 modules)
+ GET /profile 200 in 1538ms
+ ○ Compiling /scan-history ...
+ ✓ Compiled /scan-history in 1129ms (1862 modules)
+ GET /scan-history 200 in 1325ms
+ ○ Compiling /settings ...
+ ✓ Compiled /settings in 940ms (1871 modules)
+ GET /settings 200 in 1133ms
+ GET /settings 200 in 592ms
+ GET /settings 200 in 136ms
+ GET /dashboard 200 in 58ms
