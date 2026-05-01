@@ -1,6 +1,10 @@
 from pathlib import Path
 import sys
 
+import pytest
+
+pytest.importorskip("torch")
+
 from PIL import Image
 
 
