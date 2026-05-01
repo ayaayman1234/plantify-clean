@@ -121,16 +121,9 @@ export default function AdminPage() {
     }
   });
 
-  if (!token) {
-    return <main className="mx-auto max-w-5xl px-4 py-10 text-sm text-[var(--text-secondary)]">Please sign in to access admin tools.</main>;
-  }
-
-  if (!isAdmin) {
-    return <main className="mx-auto max-w-5xl px-4 py-10 text-sm text-[var(--text-secondary)]">You do not have permission to access the admin panel.</main>;
-  }
-
   const overview = overviewQuery.data;
   const normalizedQuery = searchQuery.trim().toLowerCase();
+  
   const filteredReports = useMemo(() => {
     const reports = overview?.reports ?? [];
     if (!normalizedQuery) return reports;
@@ -149,6 +142,7 @@ export default function AdminPage() {
         .includes(normalizedQuery)
     );
   }, [normalizedQuery, overview?.reports]);
+
   const filteredApplications = useMemo(() => {
     const applications = overview?.expert_applications ?? [];
     if (!normalizedQuery) return applications;
@@ -167,6 +161,7 @@ export default function AdminPage() {
         .includes(normalizedQuery)
     );
   }, [normalizedQuery, overview?.expert_applications]);
+
   const filteredUsers = useMemo(() => {
     const users = overview?.users ?? [];
     if (!normalizedQuery) return users;
@@ -183,6 +178,14 @@ export default function AdminPage() {
         .includes(normalizedQuery)
     );
   }, [normalizedQuery, overview?.users]);
+
+  if (!token) {
+    return <main className="mx-auto max-w-5xl px-4 py-10 text-sm text-[var(--text-secondary)]">Please sign in to access admin tools.</main>;
+  }
+
+  if (!isAdmin) {
+    return <main className="mx-auto max-w-5xl px-4 py-10 text-sm text-[var(--text-secondary)]">You do not have permission to access the admin panel.</main>;
+  }
 
   return (
     <main className="mx-auto max-w-7xl space-y-6 px-4 py-8">

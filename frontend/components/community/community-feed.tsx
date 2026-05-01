@@ -709,11 +709,12 @@ function DetailsPanel({
   commentLikeBusyId: string | null;
   copy: ReturnType<typeof getDashboardCopy>["community"];
 }) {
+  const treatmentLabel = treatmentLabelForLocale(useLocale() as AppLocale);
+
   if (!open) return null;
 
   const childrenMap = buildCommentTree(post?.comments ?? []);
   const rootComments = childrenMap.get(null) ?? [];
-  const treatmentLabel = treatmentLabelForLocale(useLocale() as AppLocale);
 
   return (
     <div className="fixed inset-0 z-[90] flex items-end justify-center bg-black/50 p-0 md:items-center md:p-6">
