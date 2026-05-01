@@ -97,8 +97,8 @@ function ExpertApplicationCard({
           </Button>
           <Button
             size="sm"
-            variant="outline"
-            className="gap-1.5 border-red-500/30 text-red-600 hover:bg-red-500/10 dark:text-red-400"
+            variant="ghost"
+            className="gap-1.5 border border-red-500/30 text-red-600 hover:bg-red-500/10 dark:text-red-400"
             disabled={loading === app.id}
             onClick={() => onReject(app.id)}
           >
@@ -140,13 +140,13 @@ export function AdminDashboard() {
     setActionLoading(applicationId);
     setActionError(null);
     try {
-      const updated = await approveExpertApplication({ token, applicationId });
+      await approveExpertApplication({ token, applicationId });
       setOverview((prev) =>
         prev
           ? {
               ...prev,
               expert_applications: prev.expert_applications.map((a) =>
-                a.id === updated.id ? updated : a
+                a.id === applicationId ? { ...a, status: "approved" } : a
               ),
             }
           : prev
@@ -164,13 +164,13 @@ export function AdminDashboard() {
     setActionLoading(applicationId);
     setActionError(null);
     try {
-      const updated = await rejectExpertApplication({ token, applicationId });
+      await rejectExpertApplication({ token, applicationId });
       setOverview((prev) =>
         prev
           ? {
               ...prev,
               expert_applications: prev.expert_applications.map((a) =>
-                a.id === updated.id ? updated : a
+                a.id === applicationId ? { ...a, status: "rejected" } : a
               ),
             }
           : prev
