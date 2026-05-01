@@ -1,3 +1,7 @@
+import pytest
+
+pytest.importorskip("torch")
+
 from scripts.export_onnx import _select_export_state_dict
 
 
